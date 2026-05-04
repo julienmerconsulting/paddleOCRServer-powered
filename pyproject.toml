@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "paddleocrserver-powered"
+version = "0.1.0"
+description = "Multi-language PaddleOCR HTTP server (Flask + Waitress) packaged for one-command deployment."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Julien MER" }]
+keywords = ["ocr", "paddleocr", "http", "server", "flask", "waitress"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Image Recognition",
+    "Topic :: Internet :: WWW/HTTP :: HTTP Servers",
+]
+dependencies = [
+    "paddleocr",
+    "paddlepaddle",
+    "flask",
+    "waitress",
+    "flask-limiter",
+    "opencv-python",
+    "numpy",
+    "pyyaml",
+]
+
+[project.urls]
+Homepage = "https://github.com/julienmerconsulting/paddleOCRServer-powered"
+Repository = "https://github.com/julienmerconsulting/paddleOCRServer-powered"
+Issues = "https://github.com/julienmerconsulting/paddleOCRServer-powered/issues"
+
+[project.scripts]
+paddleocrserver-powered = "paddleocrserver_powered.server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+paddleocrserver_powered = ["*.yaml"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]
+ignore = ["E501"]

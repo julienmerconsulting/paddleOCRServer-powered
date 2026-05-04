@@ -1,0 +1,20 @@
+# languages.yaml — declares which language packs are loaded at server startup.
+#
+# Set a language to `true` to eager-load it on boot (no cold start on first
+# request). Set to `false` to keep it out of RAM entirely.
+#
+# `default_language` is the language used by /ocr when no `lang` param is
+# given in the request body. It MUST be one of the languages set to `true`.
+#
+# Override this file at runtime via:
+#   - the OCR_LANGUAGES_CONFIG env var (path to a YAML file)
+#   - the --languages-config CLI flag
+enabled:
+  latin: true
+  japan: false
+  korean: false
+  chinese_cht: false
+  cyrillic: false
+  arabic: false
+  devanagari: false
+default_language: latin
