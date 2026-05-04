@@ -1,25 +1,25 @@
 SubModules:
   TextDetection:
-    box_thresh: 0.6          # Augmente de 0.5 -> plus strict sur les boxes
-    limit_side_len: 640      # Augmente de 480 -> meilleure résolution
-    limit_type: max          
+    box_thresh: 0.6          # Bumped from 0.5 -> stricter on boxes
+    limit_side_len: 640      # Bumped from 480 -> better resolution
+    limit_type: max
     max_side_limit: 4000
     model_dir: null
     model_name: PP-OCRv5_mobile_det
     module_name: text_detection
-    thresh: 0.25             # Augmente de 0.2 -> moins de faux positifs
-    unclip_ratio: 1.5        # Réduit de 1.8 -> boxes moins larges, moins de fusion
+    thresh: 0.25             # Bumped from 0.2 -> fewer false positives
+    unclip_ratio: 1.5        # Reduced from 1.8 -> narrower boxes, less merging
   TextLineOrientation:
     batch_size: 6
     model_dir: null
     model_name: PP-LCNet_x1_0_textline_ori
     module_name: textline_orientation
   TextRecognition:
-    batch_size: 8            # Augmente de 6 -> traite plus en parallèle
+    batch_size: 8            # Bumped from 6 -> more parallelism
     model_dir: null
     model_name: chinese_cht_PP-OCRv5_mobile_rec
     module_name: text_recognition
-    score_thresh: 0.5        # Augmente de 0.0 -> filtre les résultats moyens
+    score_thresh: 0.5        # Bumped from 0.0 -> filters out mediocre results
 SubPipelines:
   DocPreprocessor:
     SubModules:
