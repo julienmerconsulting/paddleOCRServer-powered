@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 paddleocrserver_powered.server — The server that reads what nothing else can read.
 
@@ -59,7 +58,6 @@ from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 from paddleocr import PaddleOCR
 from waitress import serve
-
 
 PACKAGE_NAME = "paddleocrserver_powered"
 
@@ -189,7 +187,7 @@ def load_languages_config(path: Path) -> tuple[list[str], str]:
       - default_language is in the enabled list (otherwise /ocr would 400 on
         every request that omits the lang param — we'd rather fail at boot)
     """
-    with open(path, "r", encoding="utf-8") as f:
+    with open(path, encoding="utf-8") as f:
         cfg = yaml.safe_load(f) or {}
 
     enabled_map = cfg.get("enabled", {}) or {}

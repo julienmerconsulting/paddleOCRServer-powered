@@ -5,7 +5,6 @@ from __future__ import annotations
 import os
 import subprocess
 import sys
-from typing import Optional
 
 from .server import main
 
@@ -15,11 +14,11 @@ __version__ = "0.1.0"
 
 
 def spawn_server(
-    port: Optional[int] = None,
-    host: Optional[str] = None,
-    languages_config: Optional[str] = None,
-    python_executable: Optional[str] = None,
-    env: Optional[dict] = None,
+    port: int | None = None,
+    host: str | None = None,
+    languages_config: str | None = None,
+    python_executable: str | None = None,
+    env: dict | None = None,
     **popen_kwargs,
 ) -> subprocess.Popen:
     """
