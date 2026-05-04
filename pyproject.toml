@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "paddleocrserver-powered"
-version = "0.1.1"
+version = "1.0.0"
 description = "Multi-language PaddleOCR HTTP server (Flask + Waitress) packaged for one-command deployment."
 readme = "README.md"
 requires-python = ">=3.9"
@@ -12,7 +12,7 @@ license = { text = "MIT" }
 authors = [{ name = "Julien MER" }]
 keywords = ["ocr", "paddleocr", "http", "server", "flask", "waitress"]
 classifiers = [
-    "Development Status :: 4 - Beta",
+    "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",

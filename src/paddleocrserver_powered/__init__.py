@@ -8,7 +8,7 @@ import sys
 
 __all__ = ["main", "spawn_server", "__version__"]
 
-__version__ = "0.1.1"
+__version__ = "1.0.0"
 
 
 def __getattr__(name):
