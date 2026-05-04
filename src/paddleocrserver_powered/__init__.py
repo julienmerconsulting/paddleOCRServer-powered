@@ -6,11 +6,22 @@ import os
 import subprocess
 import sys
 
-from .server import main
-
 __all__ = ["main", "spawn_server", "__version__"]
 
 __version__ = "0.1.0"
+
+
+def __getattr__(name):
+    """
+    Lazy attribute access so `import paddleocrserver_powered` does not pull
+    in the heavy runtime deps (paddleocr, cv2, ...) just for resource lookups
+    or version introspection. The deps are only required when something
+    actually calls `main` or `spawn_server`'s subprocess starts up.
+    """
+    if name == "main":
+        from .server import main as _main
+        return _main
+    raise AttributeError(f"module {__name__!r} has no attribute {name!r}")
 
 
 def spawn_server(
