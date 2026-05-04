@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "paddleocrserver-powered"
-version = "0.1.0"
+version = "0.1.1"
 description = "Multi-language PaddleOCR HTTP server (Flask + Waitress) packaged for one-command deployment."
 readme = "README.md"
 requires-python = ">=3.9"
@@ -25,14 +25,14 @@ classifiers = [
     "Topic :: Internet :: WWW/HTTP :: HTTP Servers",
 ]
 dependencies = [
-    "paddleocr",
-    "paddlepaddle",
-    "flask",
-    "waitress",
-    "flask-limiter",
-    "opencv-python",
-    "numpy",
-    "pyyaml",
+    "paddleocr>=3.3,<4",
+    "paddlepaddle>=3.0,<4",
+    "flask>=2.3",
+    "waitress>=3.0",
+    "flask-limiter>=3.13",
+    "opencv-python>=4.10",
+    "numpy>=1.24",
+    "pyyaml>=6.0",
 ]
 
 [project.urls]
